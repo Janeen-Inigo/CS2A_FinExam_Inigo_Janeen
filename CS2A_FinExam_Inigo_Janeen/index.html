@@ -1,0 +1,121 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>Login Page</title> 
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .login-card {
+        width: 500px;
+        max-width: 100%;
+    }
+</style>
+
+</head> 
+<body> 
+    <!-- HEADER -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="img/logo.png" width="40" class="me-2">
+                <strong>My Website</strong>
+            </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+ <!-- MAIN LOGIN AREA -->
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+        <div class="login-card">
+
+            <!-- LOGIN FORM -->
+  <div class="login-container">
+    <div class="card">
+      <div class="card-header text-center">
+        <h3>Login</h3>
+      </div>
+      <div class="card-body">
+        <form id="loginForm" onsubmit="return validateLogin(event)">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+        <div id="error-message" class="text-danger mt-3" style="display: none;">Invalid username or password. Please try again.</div>
+        <div class="text-center mt-3">
+                    <a href="#" class="d-block">Forgot Password?</a>
+                    <a href="#" class="d-block">Create an Account</a>
+      </div>
+    </div>
+ </div>
+        </div>
+    </div>
+ </div>
+
+    <!-- Footer -->
+     <footer class="bg-dark text-white p-3 mt-6">
+    <div class="container">
+        <div class="row h-100">
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+                <h5 class="text-center">Contact Us:</h5>
+                <p class="text-center mb-1">Email: inigojaneen01@gmail.com</p>
+                <p class="text-center">Phone: 0962-358-2045</p>
+            </div>
+            <div class="col-md-6 d-flex flex-column justify-content-center text-center">
+                <h5>Follow Us On:</h5>
+                <a href="#" class="text-white d-block">Facebook</a>
+                <a href="#" class="text-white d-block">Instagram</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- BOOTSTRAP JS -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Simple validation using JavaScript
+    function validateLogin(event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      const validUsername = "user";
+      const validPassword = "password123";
+
+      if (username === validUsername && password === validPassword) {
+      
+        window.location.href = "index.html";
+      } else {
+        document.getElementById('error-message').style.display = 'block';
+      }
+    }
+  </script>
+
+</body> 
+</html>
